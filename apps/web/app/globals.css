@@ -1,0 +1,66 @@
+/* Design tokens (single source of truth) come first, then Tailwind layers. */
+@import "../../../styles/tokens.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+  body {
+    background-color: var(--bg-base);
+    color: var(--text-hi);
+  }
+}
+
+@layer components {
+  /* Frosted glass: translucent surface + backdrop blur & saturate. */
+  .glass {
+    background-color: color-mix(in srgb, var(--bg-surface) 62%, transparent);
+    border: 1px solid color-mix(in srgb, var(--border-strong) 80%, transparent);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    backdrop-filter: blur(20px) saturate(180%);
+  }
+
+  /* Aurora gradient clipped to text. */
+  .aurora-text {
+    background-image: linear-gradient(
+      90deg,
+      var(--accent-violet),
+      var(--accent-blue),
+      var(--accent-cyan)
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+  }
+
+  /* AI glow: accent-derived halo, for surfaces the agent "owns". */
+  .glow-ai {
+    box-shadow: var(--shadow-glow-ai);
+    border: 1px solid color-mix(in srgb, var(--accent-violet) 40%, transparent);
+  }
+}
+
+@layer utilities {
+  /* Subtle ~2.5% film grain. Paints over the element's own background, under content. */
+  .bg-noise {
+    position: relative;
+    isolation: isolate;
+  }
+  .bg-noise::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    opacity: 0.025;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    background-size: 200px 200px;
+  }
+}

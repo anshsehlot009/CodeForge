@@ -1,0 +1,22 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(node /private/tmp/trace.mjs)",
+      "Bash(node /private/tmp/trace2.mjs)",
+      "Bash(cp /tmp/scratch.test.ts /Users/anshsehlot/Code-forge/apps/github/src/review/scratch.test.ts)",
+      "Bash(sed -i '' 's#/Users/anshsehlot/Code-forge/apps/github/src/review/types.js#./types.js#' /Users/anshsehlot/Code-forge/apps/github/src/review/scratch.test.ts)",
+      "Bash(npx vitest *)",
+      "Bash(xargs cat)",
+      "WebFetch(domain:github.com)",
+      "Bash(pnpm --filter @code-forge/github exec tsc --noEmit)",
+      "Bash([ -s \"$f\" ])",
+      "Bash(python3 -c 'import json;json.load\\(open\\('\\\\''/private/tmp/claude-501/-Users-anshsehlot-Code-forge/ff105730-79a5-4185-84d2-76dc1ea29ec2/tasks/wbls0avro.output'\\\\''\\)\\)')",
+      "Bash(python3 -c ' *)",
+      "Bash(grep -rniE \"#[0-9a-f]{3,8}\\\\b\" components/home components/pr components/settings components/metrics.tsx)",
+      "Bash(grep -rniE \"rgba?\\\\\\(\" components/home components/pr components/settings components/metrics.tsx)"
+    ],
+    "additionalDirectories": [
+      "/private/tmp"
+    ]
+  }
+}

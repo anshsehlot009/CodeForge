@@ -1,0 +1,27 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(pnpm --version)",
+      "Bash(pnpm -r build)",
+      "Bash(echo \"EXIT CODE: $?\")",
+      "Bash(npx next *)",
+      "Bash(pnpm --filter @code-forge/core typecheck)",
+      "Bash(pnpm lint *)",
+      "Bash(pnpm test *)",
+      "Bash(pnpm --filter @code-forge/core smoke strong fast vector)",
+      "Bash(grep -vE \"^>|^$|node_modules\")",
+      "Bash(echo \"EXIT: $?\")",
+      "Bash(pnpm -r typecheck)",
+      "WebSearch",
+      "Bash(cd /Users/anshsehlot/Code-forge)",
+      "Bash(cat pnpm-workspace.yaml)",
+      "Bash(ls -la apps/github/node_modules/@code-forge/)",
+      "Bash(ls node_modules/.bin/tsc)",
+      "Bash(ls apps/github/node_modules/.bin/tsc)",
+      "Bash(rm -f src/__verify_core_import.ts)",
+      "Bash(rm -f /tmp/app.ts.bak)",
+      "Bash(perl -0pi -e 's/\\(\\\\bfrom\\\\s*\"\\)\\(\\\\.\\\\.?\\\\/[^\"]*?\\)\\(\"\\)/$1$2.js$3/g' packages/core/src/*.ts packages/core/src/providers/*.ts packages/core/src/cli/*.ts)",
+      "Bash(pnpm --filter @code-forge/core smoke strong)"
+    ]
+  }
+}

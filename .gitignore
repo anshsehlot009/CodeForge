@@ -1,0 +1,10 @@
+node_modules/
+.next/
+dist/
+build/
+.env
+*.onnx
+packages/core/local_cache/
+.env.local
+.env.*
+!.env.example
