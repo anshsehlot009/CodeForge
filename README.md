@@ -7,7 +7,7 @@ opens commits as PRs, and reasons over a codebase with retrieval.
 
 ## Layout
 
-```
+``` 
 apps/
   web/      Next.js (App Router) + Tailwind dashboard & editor   → Vercel
   github/   Probot / Octokit GitHub App (webhooks, reviews)      → Render
