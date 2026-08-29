@@ -3,7 +3,7 @@
 An AI-native coding workspace — dashboard + editor with an agent that reviews code,
 opens commits as PRs, and reasons over a codebase with retrieval.
 
-> 📌 **Working rules live in [CLAUDE.md](CLAUDE.md).** Read it first.
+
 
 ## Layout
 
@@ -26,4 +26,4 @@ cp .env.example .env.local   # then fill in secrets
 pnpm dev                     # web app → http://localhost:3000
 ```
 
-See [CLAUDE.md](CLAUDE.md) for the full command list, architecture rules, and definition of done.
+
